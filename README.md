@@ -13,7 +13,8 @@ This webpage walks you through how to use HealthOptima to analyze your food choi
 
 ## Why Use This Guide?
 
-Because we believe your health journey should be easy, clear, and maybe even a little fun! Ignore any nervous voice in the background — just dive in and enjoy.
+Because we believe your health journey should be easy, clear, and maybe even a little fun! — just dive in and enjoy.
+
 ---
 
 Got feedback? Reach out through the contact info in the footer — we love hearing from you!
