@@ -15,7 +15,7 @@
 
     <main class="main-content">
       <div class="qa-pair">
-      <div class="question" id="q1">What is it?</div>
+      <div class="question" id="q1"> ▼  What is it?</div>
       <div class="answer scrollable" id="answer1">
         <div class="answer-desktop">
           <p><strong>HealthOptima</strong> is an intelligent health analysis platform designed to empower users with personalized food and wellness insights based on their medical conditions and lifestyle data.</p>
@@ -36,7 +36,7 @@
       </div>
       </div>
     <div class="qa-pair">
-      <div class="question" id="q2">How it works?</div>
+      <div class="question" id="q2"> ▼ How it works?</div>
       <div class="answer scrollable" id="answer2">
   <div class="step">
     <div class="step-content">
@@ -111,19 +111,120 @@
 </div>
 
 <div class="qa-pair">
-  <div class="question" id="q3">How to set up?</div>
+  <div class="question" id="q3">▼ How to set up?</div>
   <div class="answer scrollable" id="answer3">
-    <p><strong>Installation Steps:</strong></p>
+
+    <div class="step">
+      <p>Clone the GitHub repository:</p>
+      <pre><code>git clone https://github.com/MImahin/HealthOptima.git</code></pre>
+    </div>
+
+    <div class="step">
+      <p>Navigate to the project directory:</p>
+      <pre><code>cd HealthOptima</code></pre>
+    </div>
+
+    <div class="step">
+      <p>Create and activate a virtual environment (Windows):</p>
+      <pre><code>python -m venv venv
+venv\Scripts\activate</code></pre>
+      <p>Or on macOS/Linux:</p>
+      <pre><code>python3 -m venv venv
+source venv/bin/activate</code></pre>
+    </div>
+
+    <div class="step">
+      <p>Install required dependencies:</p>
+      <pre><code>pip install -r requirements.txt</code></pre>
+    </div>
+
+    <div class="step">
+      <p>Run the app locally:</p>
+      <pre><code>python app.py</code></pre>
+    </div>
+
+    <div class="step">
+      <p>Access the app in your browser:</p>
+      <p><a href="http://localhost:5000" target="_blank">http://localhost:5000</a></p>
+    </div>
+
+    <div class="step">
+  <p><strong>Troubleshooting Tips &amp; Common Errors</strong></p>
+<hr>
+  <h4>Error: Dependency version conflicts or installation failures</h4>
+  <p><strong>What it means:</strong><br>
+  Sometimes the versions of packages in <code>requirements.txt</code> might not be compatible with your system or other installed packages. This can cause installation errors or runtime issues.</p>
+  <p><strong>How to fix it:</strong></p>
+  <ul>
+    <li>Open the <code>requirements.txt</code> file in a text editor.</li>
+    <li>Find the packages causing issues (check your error logs).</li>
+    <li>Remove the version numbers after the package names (for example, change <code>package==1.2.3</code> to just <code>package</code>).</li>
+    <li>Save the file.</li>
+    <li>Run the command again:</li>
+  </ul>
+  <pre><code>pip install -r requirements.txt</code></pre>
+  <p>This lets <code>pip</code> install the latest compatible version.</p>
+<hr>
+  <h4>Error: 'python' is not recognized as an internal or external command</h4>
+  <p><strong>What it means:</strong><br>
+  Your system doesn’t recognize the <code>python</code> command because Python’s executable isn’t in your system PATH or you’re on a system where the command is <code>python3</code>.</p>
+  <p><strong>How to fix it:</strong></p>
+  <ul>
+    <li>Try running your commands using <code>python3</code> instead of <code>python</code>.</li>
+    <li>Make sure Python is installed on your machine.</li>
+    <li>Add Python to your system PATH:</li>
     <ul>
-      <li>Download or clone the project repository from GitHub.</li>
-      <li>Install required dependencies such as Python 3.x and necessary libraries.</li>
-      <li>Set up a virtual environment using <code>virtualenv</code> or <code>conda</code> to manage packages.</li>
-      <li>Run the app locally using the command <code>python app.py</code> (or your project’s entry script) to test functionality.</li>
+      <li>On Windows, add Python’s install directory to the Environment Variables.</li>
+      <li>On macOS/Linux, Python is usually pre-installed or installed via package managers.</li>
     </ul>
+    <li>You can verify Python installation by running:</li>
+  </ul>
+  <pre><code>python --version
+python3 --version</code></pre>
+<hr>
+  <h4>Error: Virtual environment activation command not working</h4>
+  <p><strong>What it means:</strong><br>
+  Your shell/terminal is unable to run the activation script for the Python virtual environment.</p>
+  <p><strong>How to fix it:</strong><br>
+  Check that you are using the correct command for your operating system:</p>
+  <ul>
+    <li><strong>Windows (Command Prompt):</strong></li>
+  </ul>
+  <pre><code>venv\Scripts\activate</code></pre>
+  <ul>
+    <li><strong>Windows (PowerShell):</strong><br>
+      <em>Note:</em> PowerShell may block script execution by default; you might need to run PowerShell as administrator and run:</li>
+  </ul>
+  <pre><code>.\venv\Scripts\Activate.ps1
+Set-ExecutionPolicy RemoteSigned</code></pre>
+  <ul>
+    <li><strong>macOS/Linux:</strong></li>
+  </ul>
+  <pre><code>source venv/bin/activate</code></pre>
+<hr>
+  <h4>Error: Port 5000 already in use</h4>
+  <p><strong>What it means:</strong><br>
+  Another program or previous instance of your app is already running and using port 5000, which is Flask’s default port.</p>
+  <p><strong>How to fix it:</strong></p>
+  <ul>
+    <li>Close the program or process using port 5000. On Windows, you can use Task Manager to end Python or related processes. On macOS/Linux, use commands like:</li>
+  </ul>
+  <pre><code>lsof -i :5000
+kill &lt;PID&gt;</code></pre>
+  <ul>
+    <li>Alternatively, run your Flask app on a different port by specifying the port number in your run command:</li>
+  </ul>
+  <pre><code>python app.py --port=5001</code></pre>
+  <p>Or modify your Flask app to specify a different port inside the code.</p>
+</div>
+
+
   </div>
 </div>
+
+
 <div class="qa-pair">
-  <div class="question" id="q4">Wanna see an overview?</div>
+  <div class="question" id="q4">▼ Wanna see an overview?</div>
   <div class="answer scrollable" id="answer4">
     <p>Ignore my nervous voice 😅</p>
     <iframe 

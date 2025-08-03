@@ -145,3 +145,33 @@ footer {
   font-size: 1.1rem;
   margin-bottom: 12px;
 }
+.answer .step {
+  margin-bottom: 25px;
+}
+
+.answer .step p {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.answer pre {
+  background-color: #222;
+  padding: 10px 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #eee;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.answer a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.answer a:hover {
+  text-decoration: underline;
+}
