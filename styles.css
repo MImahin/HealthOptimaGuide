@@ -1,0 +1,147 @@
+/* Reset default margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  padding: 30px 20px;
+}
+
+/* Title */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Questions */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.question:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Answers */
+.answer {
+  background-color: #000000;
+  border-left: 4px solid #000000;
+  padding: 15px;
+  margin: 10px auto 30px auto; /* center horizontally with vertical margin */
+  border-radius: 6px;
+  display: none;
+  max-width: 900px; /* limit width for readability */
+}
+
+.answer.active {
+  display: block;
+}
+
+/* Desktop and Mobile Versions */
+.answer-desktop {
+  display: block;
+}
+
+.answer-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .answer-desktop {
+    display: none;
+  }
+  .answer-mobile {
+    display: block;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+.team-info,
+.contact-info {
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* Step block */
+.step {
+  margin-bottom: 30px;
+}
+
+/* Step content wrapper: same width for text and image, centered */
+.step-content {
+  max-width: 80vw;   /* You can adjust this to 800px or so */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Paragraph inside step-content */
+.step-content p {
+  margin-bottom: 10px;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Image inside step-content fills width */
+.step-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  display: block;
+}
+
+.step hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+}
+
+.qa-pair {
+  margin-bottom: 30px;
+}
+
+.question.active {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  border-bottom: 2px solid lab(100% 0.01 -0.01 / 0.645);
+  padding: 15px 10px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.476);
+}
+.step-label {
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
