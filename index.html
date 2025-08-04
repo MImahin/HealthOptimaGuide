@@ -123,6 +123,20 @@
       <p>Navigate to the project directory:</p>
       <pre><code>cd HealthOptima</code></pre>
     </div>
+<div class="step">
+  <p>Get your own API key:</p>
+  <p>This project uses the USDA FoodData Central API. To use it, you need to obtain a personal API key from the official site.</p>
+  <ul>
+    <li>Visit <a href="https://fdc.nal.usda.gov/api-guide.html" target="_blank">https://fdc.nal.usda.gov/api-guide</a></li>
+    <li>Go to "Gaining Access"</li>
+    <li>Sign up with your email and follow the instructions</li>
+    <li>Once you receive your key, proceed to the next step</li>
+  </ul>
+  <p>After obtaining your API key, create a <code>.env</code> file in the root of the project and add:</p>
+  <pre><code>API_KEY=your_usda_api_key_here</code></pre>
+  <p><strong>Note:</strong> This file is used locally and is excluded from version control (Git) for security.</p>
+</div>
+
 
     <div class="step">
       <p>Create and activate a virtual environment (Windows):</p>
