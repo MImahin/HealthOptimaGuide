@@ -29,17 +29,34 @@ fetch('data/daily-updates.json')
       });
 
       // Add videos
-      update.videos.forEach(v => {
-        const videoDiv = document.createElement('div');
-        videoDiv.className = 'video-container';
-        const iframe = document.createElement('iframe');
-        iframe.src = v;
-        iframe.frameBorder = 0;
-        iframe.allowFullscreen = true;
-        videoDiv.appendChild(iframe);
-        card.appendChild(videoDiv);
-      });
+update.videos.forEach(v => {
+  // Check if it's an Instagram Reel URL
+  if(v.includes("instagram.com")) {
+    const blockquote = document.createElement("blockquote");
+    blockquote.className = "instagram-media";
+    blockquote.setAttribute("data-instgrm-version", "14");
+    blockquote.style.width = "100%";
 
+    const a = document.createElement("a");
+    a.href = v; // Instagram URL
+    blockquote.appendChild(a);
+
+    card.appendChild(blockquote);
+
+    // After appending, request Instagram to render
+    if(window.instgrm) window.instgrm.Embeds.process();
+  } else {
+    // For other videos (YouTube, FB, etc.)
+    const videoDiv = document.createElement('div');
+    videoDiv.className = 'video-container';
+    const iframe = document.createElement('iframe');
+    iframe.src = v;
+    iframe.frameBorder = 0;
+    iframe.allowFullscreen = true;
+    videoDiv.appendChild(iframe);
+    card.appendChild(videoDiv);
+  }
+});
       // Add images
       update.images.forEach(img => {
         const imgEl = document.createElement('img');
