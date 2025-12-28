@@ -1,4 +1,4 @@
-documentdocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const todayDiv = document.getElementById("today-card");
   const calendarDiv = document.getElementById("calendar");
   const cardDisplayDiv = document.getElementById("selected-card");
@@ -33,13 +33,11 @@ documentdocument.addEventListener("DOMContentLoaded", () => {
     });
 
   function initCalendar(datesWithCards) {
-    // Create input for flatpickr
     const input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Select a date";
     calendarDiv.appendChild(input);
 
-    // Initialize flatpickr
     flatpickr(input, {
       inline: true,
       enable: datesWithCards,
@@ -54,9 +52,7 @@ documentdocument.addEventListener("DOMContentLoaded", () => {
           cardDisplayDiv.textContent = "No update for this date.";
         }
       },
-      locale: {
-        firstDayOfWeek: 1 // start week on Monday
-      },
+      locale: { firstDayOfWeek: 1 },
       enableTime: false,
     });
   }
@@ -70,14 +66,12 @@ documentdocument.addEventListener("DOMContentLoaded", () => {
       update.quotes.forEach(q => {
         const quoteP = document.createElement('p');
         quoteP.className = 'quote-text';
-        quoteP.style.fontStyle = 'italic';
         quoteP.textContent = `"${q.text}"`;
         card.appendChild(quoteP);
 
         if(q.author){
           const authorP = document.createElement('p');
           authorP.className = 'quote-author';
-          authorP.style.fontStyle = 'italic';
           authorP.textContent = `- ${q.author}`;
           card.appendChild(authorP);
         }
@@ -94,6 +88,8 @@ documentdocument.addEventListener("DOMContentLoaded", () => {
           btn.onclick = () => window.open(v, "_blank");
           card.appendChild(btn);
         } else if(v.includes("facebook.com") || v.includes("fb.watch")){
+          const wrapper = document.createElement("div");
+          wrapper.className = "video-container";
           const iframe = document.createElement("iframe");
           iframe.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(v)}&show_text=0&width=560`;
           iframe.width = "100%";
@@ -101,8 +97,11 @@ documentdocument.addEventListener("DOMContentLoaded", () => {
           iframe.style.border = "none";
           iframe.allowFullscreen = true;
           iframe.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
-          card.appendChild(iframe);
+          wrapper.appendChild(iframe);
+          card.appendChild(wrapper);
         } else if(v.includes("youtube.com") || v.includes("youtu.be")){
+          const wrapper = document.createElement("div");
+          wrapper.className = "video-container";
           const videoId = v.includes("youtu.be") ? v.split('/').pop() : new URL(v).searchParams.get('v');
           const iframe = document.createElement("iframe");
           iframe.src = `https://www.youtube.com/embed/${videoId}`;
@@ -111,7 +110,8 @@ documentdocument.addEventListener("DOMContentLoaded", () => {
           iframe.frameBorder = 0;
           iframe.allowFullscreen = true;
           iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-          card.appendChild(iframe);
+          wrapper.appendChild(iframe);
+          card.appendChild(wrapper);
         } else {
           const btn = document.createElement("button");
           btn.className = "video-button";
