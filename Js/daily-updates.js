@@ -1,16 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   const todayDiv = document.getElementById("today-card");
   const archiveDiv = document.getElementById("archive-cards");
-  const todayDate = new Date().toISOString().slice(0, 10);
+
+  // Format a date object to "YYYY-MM-DD"
+  function formatDate(d){
+    const date = new Date(d);
+    const year = date.getFullYear();
+    const month = String(date.getMonth()+1).padStart(2,'0');
+    const day = String(date.getDate()).padStart(2,'0');
+    return `${year}-${month}-${day}`;
+  }
+
+  const todayDate = formatDate(new Date());
+  console.log("Today date:", todayDate);
 
   fetch('daily-updates.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      return res.json();
+    })
     .then(updates => {
-      // Sort updates by date descending
-      updates.sort((a, b) => new Date(b.date) - new Date(a.date));
+      // Sort by date descending
+      updates.sort((a,b) => new Date(b.date) - new Date(a.date));
 
       updates.forEach(update => {
-        // Create card container
+        console.log("Processing update:", update.date); // Debug
+
+        // Create card
         const card = document.createElement('div');
         card.className = 'daily-card step-content';
 
@@ -22,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             quoteP.textContent = `"${q.text}"`;
             card.appendChild(quoteP);
 
-            if (q.author) {
+            if(q.author){
               const authorP = document.createElement('p');
               authorP.className = 'quote-author';
               authorP.textContent = `- ${q.author}`;
@@ -32,12 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Add videos
-        if (update.videos) {
+        if(update.videos){
           update.videos.forEach(v => {
-            if (v.includes("instagram.com")) {
+            if(v.includes("instagram.com")){
               const blockquote = document.createElement("blockquote");
               blockquote.className = "instagram-media";
-              blockquote.setAttribute("data-instgrm-version", "14");
+              blockquote.setAttribute("data-instgrm-version","14");
               blockquote.style.width = "100%";
 
               const a = document.createElement("a");
@@ -45,11 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
               blockquote.appendChild(a);
 
               card.appendChild(blockquote);
-
-              // Render Instagram embed
-              if (window.instgrm) window.instgrm.Embeds.process();
+              if(window.instgrm) window.instgrm.Embeds.process();
             } else {
-              // YouTube / other videos
               const videoDiv = document.createElement('div');
               videoDiv.className = 'video-container';
               const iframe = document.createElement('iframe');
@@ -65,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Add images
-        if (update.images) {
+        if(update.images){
           update.images.forEach(img => {
             const imgEl = document.createElement('img');
             imgEl.src = img;
@@ -77,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Place today vs archive
-        if (update.date === todayDate) {
+        if(update.date === todayDate){
           card.classList.add('today');
           todayDiv.appendChild(card);
         } else {
@@ -92,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
           content.appendChild(card);
           archiveCard.appendChild(content);
 
-          // Toggle archive content visibility
           archiveCard.addEventListener('click', () => {
             archiveCard.classList.toggle('active');
           });
@@ -103,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => {
       console.error('Error loading daily updates:', err);
-      const todayDiv = document.getElementById("today-card");
       if(todayDiv) todayDiv.textContent = "Failed to load updates.";
     });
 });
