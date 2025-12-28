@@ -6,5 +6,39 @@
     ],
     "videos": ["https://www.instagram.com/reel/DSxR5crCWkU/"],
     "images": []
+  },
+  {
+    "date": "2025-12-28",
+    "quotes": [
+      {"text": "The only limit to our realization of tomorrow is our doubts of today.", "author": "Franklin D. Roosevelt"},
+      {"text": "Happiness depends upon ourselves.", "author": "Aristotle"}
+    ],
+    "videos": ["https://www.instagram.com/reel/DQW41kyEZ91/"],
+    "images": []
+  },
+  {
+    "date": "2025-12-27",
+    "quotes": [
+      {"text": "Do not wait to strike till the iron is hot; but make it hot by striking.", "author": "William Butler Yeats"}
+    ],
+    "videos": ["https://www.instagram.com/reel/DRpI9dTiAWE/"],
+    "images": []
+  },
+  {
+    "date": "2025-12-26",
+    "quotes": [
+      {"text": "Success is not final, failure is not fatal: It is the courage to continue that counts.", "author": "Winston Churchill"},
+      {"text": "Keep your face always toward the sunshine—and shadows will fall behind you.", "author": "Walt Whitman"}
+    ],
+    "videos": ["https://www.instagram.com/reel/DQmCX19EhCg/"],
+    "images": []
+  },
+  {
+    "date": "2025-12-25",
+    "quotes": [
+      {"text": "What we achieve inwardly will change outer reality.", "author": "Plutarch"}
+    ],
+    "videos": ["https://www.instagram.com/reel/DSzsH0GjNMP/"],
+    "images": []
   }
 ]
