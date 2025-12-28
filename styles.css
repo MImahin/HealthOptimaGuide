@@ -175,3 +175,86 @@ footer {
 .answer a:hover {
   text-decoration: underline;
 }
+
+
+
+/* Daily Updates Section */
+.daily-updates {
+  margin: 50px auto;
+  max-width: 900px;
+}
+
+.daily-card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #222;
+  transition: all 0.3s ease;
+}
+
+.daily-card.today {
+  border-color: #4a90e2;
+  background-color: #1a1a1a;
+}
+
+.daily-card .quote-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 10px 0 5px 0;
+  line-height: 1.4;
+}
+
+.daily-card .quote-author {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.daily-card img {
+  width: 100%;
+  max-width: 560px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.daily-card .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.daily-card .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Archive cards scrollable container */
+#archive-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.archive-card {
+  flex: 0 0 300px;
+  cursor: pointer;
+}
+
+/* Collapsible content for archive */
+.archive-content {
+  display: none;
+  margin-top: 10px;
+}
+.archive-card.active .archive-content {
+  display: block;
+}
