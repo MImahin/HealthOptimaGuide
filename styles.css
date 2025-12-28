@@ -184,6 +184,7 @@ footer {
   max-width: 900px;
 }
 
+/* Daily Card */
 .daily-card {
   background-color: #111;
   border-radius: 12px;
@@ -198,11 +199,13 @@ footer {
   background-color: #1a1a1a;
 }
 
+/* Quotes */
 .daily-card .quote-text {
   font-size: 1.2rem;
   font-style: italic;
   margin: 10px 0 5px 0;
   line-height: 1.4;
+  color: #eee;
 }
 
 .daily-card .quote-author {
@@ -211,8 +214,10 @@ footer {
   text-align: right;
   margin-bottom: 15px;
   color: #ccc;
+  font-style: italic;
 }
 
+/* Images */
 .daily-card img {
   width: 100%;
   max-width: 560px;
@@ -220,10 +225,11 @@ footer {
   border-radius: 8px;
 }
 
+/* Video container for responsive iframe */
 .daily-card .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   overflow: hidden;
   margin: 10px 0;
@@ -235,6 +241,40 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+}
+
+/* Video Buttons */
+.video-button {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.video-button:hover {
+  transform: scale(1.05);
+}
+
+/* Instagram Button Gradient */
+.video-button.insta {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Facebook Button */
+.video-button.fb {
+  background-color: #1877f2;
+}
+
+/* YouTube Button */
+.video-button.yt {
+  background-color: #FF0000;
 }
 
 /* Archive cards scrollable container */
@@ -248,6 +288,15 @@ footer {
 .archive-card {
   flex: 0 0 300px;
   cursor: pointer;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.archive-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 /* Collapsible content for archive */
@@ -255,6 +304,35 @@ footer {
   display: none;
   margin-top: 10px;
 }
+
 .archive-card.active .archive-content {
   display: block;
+}
+
+/* Calendar Section */
+#calendar {
+  margin: 20px 0;
+}
+
+#selected-card {
+  margin-top: 20px;
+}
+
+/* Flatpickr customization */
+.flatpickr-day.selected, .flatpickr-day.today {
+  background-color: #4caf50 !important;
+  color: #fff;
+}
+
+.flatpickr-day.disabled {
+  color: #666;
+}
+
+.flatpickr-months {
+  background-color: #222;
+  color: #fff;
+}
+
+.flatpickr-weekday {
+  color: #ccc;
 }
