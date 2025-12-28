@@ -250,15 +250,27 @@ kill &lt;PID&gt;</code></pre>
     </iframe>
   </div>
 </div>
-
-<!-- Daily Updates Section -->
+      
 <div class="daily-updates">
+
+  <!-- Today's Card -->
   <h2>📅 Today's Update</h2>
   <div id="today-card"></div>
 
-  <h3>📚 Previous Updates</h3>
+  <!-- Calendar & Archive Section -->
+  <h2>📚 Previous Updates</h2>
+
+  <!-- Calendar for selecting previous updates -->
+  <div id="calendar"></div>
+
+  <!-- Display selected card from calendar -->
+  <div id="selected-card"></div>
+
+  <!-- Scrollable Archive Cards as fallback / quick view -->
   <div id="archive-cards"></div>
+
 </div>
+
 
 <div class="qa-pair">
   <div class="question" id="q5">▼ Data Wrangling Project : Global Multimodal Geo-Biotic Dataset (GMGBD)</div>
@@ -311,9 +323,15 @@ kill &lt;PID&gt;</code></pre>
   });
   </script>
   
-  <!-- Daily Updates JS -->
-  <script src="Js/daily-updates.js"></script>
-  <!-- Instagram Embed JS -->
-<script async src="https://www.instagram.com/embed.js"></script>
+
+<!-- Include Flatpickr CSS & JS for calendar -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<!-- Instagram Embed JS -->
+<script async defer src="//www.instagram.com/embed.js"></script>
+
+<!-- Your custom JS -->
+<script src="Js/daily-updates.js"></script>
 </body>
 </html>
