@@ -251,26 +251,20 @@ kill &lt;PID&gt;</code></pre>
   </div>
 </div>
       
-<div class="daily-updates">
-
-  <!-- Today's Card -->
+<div class="daily-updates-section">
   <h2>📅 Today's Update</h2>
-  <div id="today-card"></div>
+  <div id="today-card" class="daily-updates">
+    <!-- Today's card will be injected here -->
+  </div>
 
-  <!-- Calendar & Archive Section -->
   <h2>📚 Previous Updates</h2>
+  <!-- Calendar input -->
+  <input type="date" id="archive-calendar" />
 
-  <!-- Calendar for selecting previous updates -->
-  <div id="calendar"></div>
-
-  <!-- Display selected card from calendar -->
-  <div id="selected-card"></div>
-
-  <!-- Scrollable Archive Cards as fallback / quick view -->
-  <div id="archive-cards"></div>
-
+  <div id="archive-cards" class="daily-updates">
+    <!-- Archive cards will be injected here -->
+  </div>
 </div>
-
 
 <div class="qa-pair">
   <div class="question" id="q5">▼ Data Wrangling Project : Global Multimodal Geo-Biotic Dataset (GMGBD)</div>
