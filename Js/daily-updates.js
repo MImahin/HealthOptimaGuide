@@ -45,44 +45,25 @@ document.addEventListener("DOMContentLoaded", () => {
         if(update.videos){
           update.videos.forEach(v => {
             if(v.includes("instagram.com")){
-              try {
-                const blockquote = document.createElement("blockquote");
-                blockquote.className = "instagram-media";
-                blockquote.setAttribute("data-instgrm-version","14");
-                blockquote.style.width = "100%";
-
-                const a = document.createElement("a");
-                a.href = v;
-                blockquote.appendChild(a);
-
-                card.appendChild(blockquote);
-
-                if(window.instgrm) instgrm.Embeds.process();
-              } catch(e){
-                // fallback clickable button
-                const btn = document.createElement("button");
-                btn.textContent = "View Instagram Video";
-                btn.onclick = () => window.open(v, "_blank");
-                card.appendChild(btn);
-              }
+              // Instagram fallback: clickable button
+              const btn = document.createElement("button");
+              btn.className = "video-button";
+              btn.textContent = "View Instagram Video";
+              btn.onclick = () => window.open(v, "_blank");
+              card.appendChild(btn);
             } else if(v.includes("facebook.com") || v.includes("fb.watch")){
-              try {
-                const iframe = document.createElement("iframe");
-                iframe.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(v)}&show_text=0&width=560`;
-                iframe.width = "100%";
-                iframe.height = "315";
-                iframe.style.border = "none";
-                iframe.allowFullscreen = true;
-                card.appendChild(iframe);
-              } catch(e){
-                const btn = document.createElement("button");
-                btn.textContent = "View Facebook Video";
-                btn.onclick = () => window.open(v,"_blank");
-                card.appendChild(btn);
-              }
-            } else if(v.includes("youtube.com") || v.includes("youtu.be")){
               const iframe = document.createElement("iframe");
-              iframe.src = v.includes("youtu.be") ? v.replace("youtu.be/", "www.youtube.com/embed/") : v.replace("watch?v=", "embed/");
+              iframe.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(v)}&show_text=0&width=560`;
+              iframe.width = "100%";
+              iframe.height = "315";
+              iframe.style.border = "none";
+              iframe.allowFullscreen = true;
+              iframe.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
+              card.appendChild(iframe);
+            } else if(v.includes("youtube.com") || v.includes("youtu.be")){
+              const videoId = v.includes("youtu.be") ? v.split('/').pop() : new URL(v).searchParams.get('v');
+              const iframe = document.createElement("iframe");
+              iframe.src = `https://www.youtube.com/embed/${videoId}`;
               iframe.width = "100%";
               iframe.height = "315";
               iframe.frameBorder = 0;
@@ -91,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               // fallback: clickable link
               const btn = document.createElement("button");
+              btn.className = "video-button";
               btn.textContent = "View Video";
               btn.onclick = () => window.open(v,"_blank");
               card.appendChild(btn);
@@ -117,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           const archiveCard = document.createElement('div');
           archiveCard.className = 'archive-card';
+
           const title = document.createElement('h4');
           title.textContent = update.date;
           archiveCard.appendChild(title);
