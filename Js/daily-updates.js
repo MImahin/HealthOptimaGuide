@@ -2,7 +2,7 @@ const todayDiv = document.getElementById("today-card");
 const archiveDiv = document.getElementById("archive-cards");
 const todayDate = new Date().toISOString().slice(0, 10);
 
-fetch('data/daily-updates.json')
+fetch('daily-updates.json')
   .then(res => res.json())
   .then(updates => {
     // Sort by date descending
