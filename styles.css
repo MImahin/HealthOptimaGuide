@@ -309,19 +309,6 @@ footer {
   display: block;
 }
 
-
-/* Calendar input/search bar */
-#archive-calendar {
-  background-color: #000; /* black input */
-  color: #fff; 
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #333;
-  font-size: 1rem;
-  width: 220px;
-  margin-bottom: 15px;
-}
-
 /* === Flatpickr Dark Theme === */
 
 /* Calendar container */
@@ -334,27 +321,33 @@ footer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 9999;
 }
-
 /* Month & year header */
 .flatpickr-months {
-  background-color: #000 !important;
-  color: #fff !important;
+  background-color: #000 !important; /* black header */
   border-bottom: 1px solid #333 !important;
-  padding: 8px 0;
 }
 
-/* Month name and year text */
-.flatpickr-months .flatpickr-month {
-  color: #fff !important;
+/* Month name text */
+.flatpickr-months .flatpickr-month .cur-month {
+  color: #fff !important; /* white month text */
   font-weight: 600;
   font-size: 1rem;
+}
+
+/* Year input text */
+.flatpickr-months .flatpickr-year input {
+  color: #fff !important;   /* white year text */
+  background: #000 !important; /* match header bg */
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 2px 6px;
+  width: 60px;
 }
 
 /* Navigation arrows */
 .flatpickr-months .flatpickr-prev-month,
 .flatpickr-months .flatpickr-next-month {
-  color: #fff !important;
-  font-size: 1.2rem;
+  color: #fff !important;   /* white arrows */
 }
 
 /* Weekday names (Mon, Tue, etc.) */
