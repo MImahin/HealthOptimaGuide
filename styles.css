@@ -1,4 +1,6 @@
-/* Reset default margin/padding */
+/* ============================= */
+/*       RESET & GLOBAL STYLES   */
+/* ============================= */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +19,9 @@ body {
   padding: 30px 20px;
 }
 
-/* Title */
+/* ============================= */
+/*            TITLE              */
+/* ============================= */
 .title {
   font-size: 3rem;
   font-weight: bold;
@@ -25,7 +29,9 @@ body {
   text-align: left;
 }
 
-/* Questions */
+/* ============================= */
+/*          QUESTIONS            */
+/* ============================= */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -43,116 +49,37 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Answers */
+.question.active {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 10px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.48);
+}
+
+/* ============================= */
+/*            ANSWERS            */
+/* ============================= */
 .answer {
-  background-color: #000000;
-  border-left: 4px solid #000000;
+  background-color: #000;
+  border-left: 4px solid #000;
   padding: 15px;
-  margin: 10px auto 30px auto; /* center horizontally with vertical margin */
+  margin: 10px auto 30px auto;
   border-radius: 6px;
   display: none;
-  max-width: 900px; /* limit width for readability */
+  max-width: 900px;
 }
 
 .answer.active {
   display: block;
 }
 
-/* Desktop and Mobile Versions */
-.answer-desktop {
-  display: block;
-}
-
-.answer-mobile {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .answer-desktop {
-    display: none;
-  }
-  .answer-mobile {
-    display: block;
-  }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 60px;
-}
-
-.team-info,
-.contact-info {
-  color: #ccc;
-  margin-top: 5px;
-}
-
-/* Step block */
-.step {
-  margin-bottom: 30px;
-}
-
-/* Step content wrapper: same width for text and image, centered */
-.step-content {
-  max-width: 80vw;   /* You can adjust this to 800px or so */
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Paragraph inside step-content */
-.step-content p {
-  margin-bottom: 10px;
-  padding: 0;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* Image inside step-content fills width */
-.step-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-  display: block;
-}
-
-.step hr {
-  border: none;
-  border-top: 1px solid #444;
-  margin-top: 20px;
-}
-
-.qa-pair {
-  margin-bottom: 30px;
-}
-
-.question.active {
-  position: sticky;
-  top: 0;
-  background-color: #000;
-  border-bottom: 2px solid lab(100% 0.01 -0.01 / 0.645);
-  padding: 15px 10px;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.476);
-}
-.step-label {
-  width: 100%;
-  text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-}
-.answer .step {
-  margin-bottom: 25px;
-}
-
 .answer .step p {
   font-weight: 600;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .answer pre {
@@ -176,15 +103,14 @@ footer {
   text-decoration: underline;
 }
 
-
-
-/* Daily Updates Section */
+/* ============================= */
+/*      DAILY UPDATES CARDS      */
+/* ============================= */
 .daily-updates {
   margin: 50px auto;
   max-width: 900px;
 }
 
-/* Daily Card */
 .daily-card {
   background-color: #111;
   border-radius: 12px;
@@ -195,11 +121,10 @@ footer {
 }
 
 .daily-card.today {
-  border-color: #4a90e2;
+  border-color: #4caf50;
   background-color: #1a1a1a;
 }
 
-/* Quotes */
 .daily-card .quote-text {
   font-size: 1.2rem;
   font-style: italic;
@@ -213,11 +138,10 @@ footer {
   font-weight: 500;
   text-align: right;
   margin-bottom: 15px;
-  color: #ccc;
+  color: #fff;
   font-style: italic;
 }
 
-/* Images */
 .daily-card img {
   width: 100%;
   max-width: 560px;
@@ -225,11 +149,10 @@ footer {
   border-radius: 8px;
 }
 
-/* Video container for responsive iframe */
 .daily-card .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   margin: 10px 0;
@@ -244,7 +167,9 @@ footer {
   border-radius: 8px;
 }
 
-/* Video Buttons */
+/* ============================= */
+/*          VIDEO BUTTONS        */
+/* ============================= */
 .video-button {
   display: inline-block;
   padding: 8px 14px;
@@ -262,22 +187,21 @@ footer {
   transform: scale(1.05);
 }
 
-/* Instagram Button Gradient */
 .video-button.insta {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-/* Facebook Button */
 .video-button.fb {
   background-color: #1877f2;
 }
 
-/* YouTube Button */
 .video-button.yt {
-  background-color: #FF0000;
+  background-color: #ff0000;
 }
 
-/* Archive cards scrollable container */
+/* ============================= */
+/*          ARCHIVE CARDS        */
+/* ============================= */
 #archive-cards {
   display: flex;
   overflow-x: auto;
@@ -299,7 +223,6 @@ footer {
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
-/* Collapsible content for archive */
 .archive-content {
   display: none;
   margin-top: 10px;
@@ -309,45 +232,49 @@ footer {
   display: block;
 }
 
-/* === Flatpickr Dark Theme === */
+/* ============================= */
+/*         FLATPICKR DARK        */
+/* ============================= */
 
 /* Calendar container */
 .flatpickr-calendar {
-  background-color: #000 !important; /* main calendar bg */
-  color: #fff !important;           /* default text */
+  background-color: #000 !important;
+  color: #fff !important;
   border: 2px solid #333 !important;
   border-radius: 10px !important;
   box-shadow: 0 6px 20px rgba(0,0,0,0.7);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   z-index: 9999;
 }
+
 /* Month & year header */
 .flatpickr-months {
-  background-color: #000 !important; /* black header */
+  background-color: #000 !important;
   border-bottom: 1px solid #333 !important;
 }
 
-/* Month name text */
+/* Month text */
 .flatpickr-months .flatpickr-month .cur-month {
-  color: #fff !important; /* white month text */
+  color: #fff !important;
   font-weight: 600;
   font-size: 1rem;
 }
 
-/* Year input text */
+/* Year input */
 .flatpickr-months .flatpickr-year input {
-  color: #fff !important;   /* white year text */
-  background: #000 !important; /* match header bg */
+  color: #fff !important;
+  background: #000 !important;
   border: 1px solid #333;
   border-radius: 4px;
   padding: 2px 6px;
   width: 60px;
+  caret-color: #fff !important;
 }
 
 /* Navigation arrows */
 .flatpickr-months .flatpickr-prev-month,
 .flatpickr-months .flatpickr-next-month {
-  color: #fff !important;   /* white arrows */
+  color: #fff !important;
 }
 
 /* Weekday names (Mon, Tue, etc.) */
@@ -367,7 +294,7 @@ footer {
 /* Today & selected day */
 .flatpickr-day.today,
 .flatpickr-day.selected {
-  background-color: #4caf50 !important; /* green highlight */
+  background-color: #4caf50 !important;
   color: #fff !important;
 }
 
@@ -396,7 +323,7 @@ footer {
   margin-bottom: 15px;
 }
 
-/* Optional: Flatpickr shadow and popup adjustments */
+/* Remove Flatpickr default shadows */
 .flatpickr-calendar:before,
 .flatpickr-calendar:after {
   display: none;
