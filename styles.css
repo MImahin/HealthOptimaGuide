@@ -308,24 +308,7 @@ footer {
 .archive-card.active .archive-content {
   display: block;
 }
-/* Calendar Section */
-#calendar {
-  margin: 20px 0;
-}
-
-#selected-card {
-  margin-top: 20px;
-}
-/* Calendar Section */
-#calendar {
-  margin: 20px 0;
-}
-
-#selected-card {
-  margin-top: 20px;
-}
-
-/* Calendar input/search bar */
+ /* Calendar input/search bar */
 #archive-calendar {
   background-color: #222; /* dark input */
   color: #eee; 
@@ -339,85 +322,83 @@ footer {
   caret-color: #fff; /* white cursor */
 }
 
-/* Placeholder color */
 #archive-calendar::placeholder {
   color: #aaa;
 }
 
-/* Remove default browser background when focused */
 #archive-calendar:focus {
   background-color: #222;
   color: #eee;
-  border-color: #4caf50; /* optional: green border on focus */
+  border-color: #4caf50; /* green highlight on focus */
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
-/* Calendar popup wrapper */
+
+/* Flatpickr Calendar Popup */
 .flatpickr-calendar {
-  background-color: #1a1a1a !important; /* dark popup */
+  background-color: #111 !important;
   color: #eee !important;
   border: 2px solid #333 !important;
   border-radius: 10px !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Month header */
 .flatpickr-months {
-  background-color: #2a2a2a !important; /* subtle gray */
+  background-color: #1a1a1a !important;
   color: #eee !important;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #333;
 }
 
-/* Weekdays */
+/* Weekdays row */
 .flatpickr-weekdays {
-  background-color: #2a2a2a !important;
-  color: #ccc !important;
+  background-color: #1a1a1a !important;
 }
 
-/* Individual day */
+.flatpickr-weekday {
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* Days */
 .flatpickr-day {
-  background: #222;
+  background: #111;
   color: #eee;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: all 0.2s;
 }
 
-/* Hover effect on day */
+/* Hover effect on days */
 .flatpickr-day:hover {
   background: #333;
   color: #fff;
+  cursor: pointer;
 }
 
-/* Selected day */
-.flatpickr-day.selected, 
-.flatpickr-day.selected:focus {
+/* Selected date */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.today {
   background: #4caf50 !important; /* green highlight */
   color: #fff !important;
 }
 
-/* Today */
-.flatpickr-day.today {
-  background: #2a2a2a;
-  color: #4caf50;
-  border: 1px solid #4caf50;
-}
-
-/* Disabled day */
+/* Disabled dates */
 .flatpickr-day.disabled {
-  color: #666 !important;
-  background: #1a1a1a !important;
+  color: #666;
+  background: #111;
+  cursor: not-allowed;
 }
 
 /* Navigation arrows */
-.flatpickr-prev-month, .flatpickr-next-month {
+.flatpickr-prev-month,
+.flatpickr-next-month {
   color: #eee;
 }
 
-.flatpickr-prev-month:hover, .flatpickr-next-month:hover {
-  color: #4caf50;
-}
-
-/* Flatpickr week numbers */
-.flatpickr-weekday {
-  color: #ccc;
+/* Current month label */
+.flatpickr-current-month span.cur-month {
+  color: #eee;
+  font-weight: bold;
 }
