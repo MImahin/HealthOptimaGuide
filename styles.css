@@ -308,7 +308,6 @@ footer {
 .archive-card.active .archive-content {
   display: block;
 }
-
 /* Calendar Section */
 #calendar {
   margin: 20px 0;
@@ -317,6 +316,7 @@ footer {
 #selected-card {
   margin-top: 20px;
 }
+
 /* Calendar input/search bar */
 #archive-calendar {
   background-color: #111; /* dark input */
@@ -327,6 +327,11 @@ footer {
   font-size: 1rem;
   width: 200px;
   margin-bottom: 15px;
+  outline: none;
+}
+
+#archive-calendar::placeholder {
+  color: #999;
 }
 
 /* Calendar popup wrapper */
@@ -346,52 +351,56 @@ footer {
   border-bottom: 1px solid #333;
 }
 
-.flatpickr-prev-month, 
-.flatpickr-next-month {
-  color: #ccc !important;
-}
-
-.flatpickr-current-month {
-  color: #fff !important;
-  font-weight: bold;
-}
-
-/* Weekdays row */
+/* Weekdays */
 .flatpickr-weekdays {
   background-color: #1a1a1a !important;
   color: #ccc !important;
 }
 
-.flatpickr-weekday {
-  color: #ccc !important;
-  font-weight: 500;
-}
-
-/* Individual days */
+/* Individual day */
 .flatpickr-day {
-  background-color: #111 !important;
-  color: #ccc !important;
+  background: #111;
+  color: #eee;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
 
+/* Hover effect on day */
 .flatpickr-day:hover {
-  background-color: #222 !important;
+  background: #333;
+  color: #fff;
+}
+
+/* Selected day */
+.flatpickr-day.selected, 
+.flatpickr-day.selected:focus {
+  background: #4caf50 !important;
   color: #fff !important;
 }
 
+/* Today */
 .flatpickr-day.today {
-  background-color: #4a90e2 !important; /* blue accent for today */
-  color: #fff !important;
-  font-weight: bold;
+  background: #222;
+  color: #fff;
+  border: 1px solid #4caf50;
 }
 
-.flatpickr-day.selected {
-  background-color: #4caf50 !important; /* green for selected */
-  color: #fff !important;
-}
-
+/* Disabled day */
 .flatpickr-day.disabled {
-  color: #555 !important;
-  background-color: #111 !important;
+  color: #666 !important;
+  background: #111 !important;
+}
+
+/* Navigation arrows */
+.flatpickr-prev-month, .flatpickr-next-month {
+  color: #eee;
+}
+
+.flatpickr-prev-month:hover, .flatpickr-next-month:hover {
+  color: #4caf50;
+}
+
+/* Flatpickr week numbers */
+.flatpickr-weekday {
+  color: #ccc;
 }
