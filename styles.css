@@ -387,3 +387,19 @@ footer {
   color: #fff;
   font-weight: bold;
 }
+
+/* Day numbers */
+.flatpickr-day {
+  color: #fff !important; /* make all dates white */
+}
+
+/* Selected day or today */
+.flatpickr-day.selected,
+.flatpickr-day.today {
+  color: #fff !important;
+}
+
+/* Disabled days */
+.flatpickr-day.disabled {
+  color: #666 !important; /* dim disabled dates */
+}
