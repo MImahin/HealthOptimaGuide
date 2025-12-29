@@ -40,5 +40,19 @@
     ],
     "videos": ["https://www.instagram.com/reel/DSzsH0GjNMP/"],
     "images": []
+  },
+  {
+  "date": "2025-12-29",
+  "quotes": [
+    {
+      "text": "You can sleep when you are dead",
+      "author": "Unknown"
+    }
+  ],
+  "videos": [
+    "https://www.instagram.com/reel/DSQB5yEkj7f/",
+    "https://www.instagram.com/reel/DSMCy3SEfww/"
+  ],
+  "images": []
   }
 ]
