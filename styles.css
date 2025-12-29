@@ -1,330 +1,408 @@
-/* ============================= */
-/*       RESET & GLOBAL STYLES   */
-/* ============================= */
+/* Reset default margin/padding */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
 .container {
-  width: 100%;
-  padding: 30px 20px;
+    width: 100%;
+    padding: 30px 20px;
 }
 
-/* ============================= */
-/*            TITLE              */
-/* ============================= */
+/* Title */
 .title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  text-align: left;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: left;
 }
 
-/* ============================= */
-/*          QUESTIONS            */
-/* ============================= */
+/* Questions */
 .main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .question {
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 10px;
-  transition: background 0.3s;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.3s;
 }
 
 .question:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.question.active {
-  position: sticky;
-  top: 0;
-  background-color: #000;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  padding: 15px 10px;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.48);
-}
-
-/* ============================= */
-/*            ANSWERS            */
-/* ============================= */
+/* Answers */
 .answer {
-  background-color: #000;
-  border-left: 4px solid #000;
-  padding: 15px;
-  margin: 10px auto 30px auto;
-  border-radius: 6px;
-  display: none;
-  max-width: 900px;
+    background-color: #000;
+    border-left: 4px solid #000;
+    padding: 15px;
+    margin: 10px auto 30px auto;
+    border-radius: 6px;
+    display: none;
+    max-width: 900px;
 }
 
 .answer.active {
-  display: block;
+    display: block;
+}
+
+/* Desktop and Mobile Versions */
+.answer-desktop {
+    display: block;
+}
+
+.answer-mobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .answer-desktop {
+        display: none;
+    }
+    .answer-mobile {
+        display: block;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 60px;
+}
+
+.team-info,
+.contact-info {
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* Step block */
+.step {
+    margin-bottom: 30px;
+}
+
+/* Step content wrapper */
+.step-content {
+    max-width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Paragraph inside step-content */
+.step-content p {
+    margin-bottom: 10px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Image inside step-content fills width */
+.step-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    display: block;
+}
+
+.step hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+.qa-pair {
+    margin-bottom: 30px;
+}
+
+.question.active {
+    position: sticky;
+    top: 0;
+    background-color: #000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 15px 10px;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.48);
+}
+
+.step-label {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.answer .step {
+    margin-bottom: 25px;
 }
 
 .answer .step p {
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
 }
 
 .answer pre {
-  background-color: #222;
-  padding: 10px 15px;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.95rem;
-  color: #eee;
-  margin-top: 0;
-  margin-bottom: 10px;
+    background-color: #222;
+    padding: 10px 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: #eee;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .answer a {
-  color: #4a90e2;
-  text-decoration: none;
+    color: #4a90e2;
+    text-decoration: none;
 }
 
 .answer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* ============================= */
-/*      DAILY UPDATES CARDS      */
-/* ============================= */
+/* Daily Updates Section */
 .daily-updates {
-  margin: 50px auto;
-  max-width: 900px;
+    margin: 50px auto;
+    max-width: 900px;
 }
 
+/* Daily Card */
 .daily-card {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 2px solid #222;
-  transition: all 0.3s ease;
+    background-color: #111;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #222;
+    transition: all 0.3s ease;
 }
 
 .daily-card.today {
-  border-color: #4caf50;
-  background-color: #1a1a1a;
+    border-color: #4a90e2;
+    background-color: #1a1a1a;
 }
 
+/* Quotes */
 .daily-card .quote-text {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin: 10px 0 5px 0;
-  line-height: 1.4;
-  color: #eee;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 10px 0 5px 0;
+    line-height: 1.4;
+    color: #eee;
 }
 
 .daily-card .quote-author {
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: right;
-  margin-bottom: 15px;
-  color: #fff;
-  font-style: italic;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: right;
+    margin-bottom: 15px;
+    color: #ccc;
+    font-style: italic;
 }
 
+/* Images */
 .daily-card img {
-  width: 100%;
-  max-width: 560px;
-  margin: 10px 0;
-  border-radius: 8px;
+    width: 100%;
+    max-width: 560px;
+    margin: 10px 0;
+    border-radius: 8px;
 }
 
+/* Video container */
 .daily-card .video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  margin: 10px 0;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 10px 0;
 }
 
 .daily-card .video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
 }
 
-/* ============================= */
-/*          VIDEO BUTTONS        */
-/* ============================= */
+/* Video Buttons */
 .video-button {
-  display: inline-block;
-  padding: 8px 14px;
-  margin-top: 10px;
-  margin-right: 5px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 500;
-  transition: transform 0.2s ease;
+    display: inline-block;
+    padding: 8px 14px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    transition: transform 0.2s ease;
 }
 
 .video-button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .video-button.insta {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
 .video-button.fb {
-  background-color: #1877f2;
+    background-color: #1877f2;
 }
 
 .video-button.yt {
-  background-color: #ff0000;
+    background-color: #FF0000;
 }
 
-/* ============================= */
-/*          ARCHIVE CARDS        */
-/* ============================= */
+/* Archive cards scrollable container */
 #archive-cards {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 10px 0;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
 }
 
 .archive-card {
-  flex: 0 0 300px;
-  cursor: pointer;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  padding: 10px;
-  transition: all 0.3s ease;
+    flex: 0 0 300px;
+    cursor: pointer;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .archive-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 .archive-content {
-  display: none;
-  margin-top: 10px;
+    display: none;
+    margin-top: 10px;
 }
 
 .archive-card.active .archive-content {
-  display: block;
+    display: block;
 }
 
-/* ============================= */
-/*         FLATPICKR DARK        */
-/* ============================= */
+/* === Flatpickr Dark Theme === */
 
 /* Calendar container */
 .flatpickr-calendar {
-  background-color: #000 !important;
-  color: #fff !important;
-  border: 2px solid #333 !important;
-  border-radius: 10px !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  z-index: 9999;
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #333 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 9999;
 }
 
 /* Month & year header */
 .flatpickr-months {
-  background-color: #000 !important;
-  border-bottom: 1px solid #333 !important;
+    background-color: #000 !important;
+    border-bottom: 1px solid #333 !important;
 }
 
 /* Month text */
 .flatpickr-months .flatpickr-month .cur-month {
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 1rem;
+    color: #fff !important;
+    opacity: 1 !important;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 /* Year input */
 .flatpickr-months .flatpickr-year input {
-  color: #fff !important;
-  background: #000 !important;
-  border: 1px solid #333;
-  border-radius: 4px;
-  padding: 2px 6px;
-  width: 60px;
-  caret-color: #fff !important;
+    color: #fff !important;
+    opacity: 1 !important;
+    background: #000 !important;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 2px 6px;
+    width: 60px;
+    caret-color: #fff !important;
+}
+
+.flatpickr-months .flatpickr-year input:focus {
+    color: #fff !important;
+    opacity: 1 !important;
 }
 
 /* Navigation arrows */
 .flatpickr-months .flatpickr-prev-month,
 .flatpickr-months .flatpickr-next-month {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 /* Weekday names (Mon, Tue, etc.) */
 .flatpickr-weekday {
-  color: #fff !important;
-  font-weight: 500;
+    color: #fff !important;
+    font-weight: 500;
 }
 
 /* Individual day cells */
 .flatpickr-day {
-  background-color: #000;
-  color: #fff;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+    background-color: #000;
+    color: #fff;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 /* Today & selected day */
 .flatpickr-day.today,
 .flatpickr-day.selected {
-  background-color: #4caf50 !important;
-  color: #fff !important;
+    background-color: #4caf50 !important;
+    color: #fff !important;
 }
 
 /* Hover effect */
 .flatpickr-day:hover {
-  background-color: #222 !important;
-  color: #fff !important;
+    background-color: #222 !important;
+    color: #fff !important;
 }
 
 /* Disabled days */
 .flatpickr-day.disabled {
-  color: #666 !important;
-  background-color: #000 !important;
-  cursor: not-allowed;
+    color: #666 !important;
+    background-color: #000 !important;
+    cursor: not-allowed;
 }
 
 /* Calendar input/search bar */
 #archive-calendar {
-  background-color: #111;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #333;
-  font-size: 1rem;
-  width: 200px;
-  margin-bottom: 15px;
+    background-color: #111;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    font-size: 1rem;
+    width: 200px;
+    margin-bottom: 15px;
 }
 
-/* Remove Flatpickr default shadows */
+/* Remove flatpickr arrows/shadows */
 .flatpickr-calendar:before,
 .flatpickr-calendar:after {
-  display: none;
+    display: none;
 }
